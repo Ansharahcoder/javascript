@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript & CSS Assignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Question 1: Show alert on link click -->
+  <section>
+    <h2>1. Link Alert Example</h2>
+    <a href="#" id="alertLink">Click me to see alert</a>
+  </section>
+
+  <!-- Question 2: Mobile images with alert on click -->
+  <section>
+    <h2>2. Mobile Phone Lookup</h2>
+    <div class="mobile-container">
+      <div class="mobile-card" onclick="showMobileAlert()">
+        <img src="./images/i phone.jpg" alt="iPhone6Plus.gif">
+        <p>iPhone6Plus.gif</p>
+      </div>
+      <div class="mobile-card" onclick="showMobileAlert()">
+        <img src="./images/samsung.jpg" alt="samsungS6EdgePlus.gif">
+        <p>GalaxyS6EdgePlus.gif</p>
+      </div>
+      <div class="mobile-card" onclick="showMobileAlert()">
+        <img src="./images/VIVO.jpg" alt="Vivo.gif">
+        <p>V10.gif</p>
+      </div>
+      <div class="mobile-card" onclick="showMobileAlert()">
+        <img src="./images/ZTE.png" alt="ZTEiP8.gif">
+        <p>HuaweiP8.gif</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Question 3: Student records table with delete button -->
+  <section>
+    <h2>3. Student Records</h2>
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS se data load hoga -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Question 4: Change image on mouseover / mouseout -->
+  <section>
+    <h2>4. Image Mouseover Effect</h2>
+    <img id="hoverImage" 
+         src="./images/bike.webp" 
+         alt="Hover Example" 
+         width="150" 
+         height="150">
+  </section>
+
+  <!-- Question 5: Counter with Increase and Decrease -->
+  <section>
+    <h2>5. Counter</h2>
+    <div class="counter-box" id="counterValue">0</div>
+    <div class="counter-btn-group">
+      <button onclick="increaseCounter()">Increase</button>
+      <button onclick="decreaseCounter()">Decrease</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
