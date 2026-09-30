@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignments - Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>JavaScript Events Assignment</h1>
+
+    <!-- ==================== CHAPTER 43 - 48 ==================== -->
+    
+    <!-- QUESTION 1: Show alert on link click -->
+    <div class="box">
+        <h3>Question 1: Link Alert</h3>
+        <a href="JavaScript:void(0)" onclick="showAlert()">Click here to see alert</a>
+    </div>
+
+    <!-- QUESTION 2: Mobile images with purchasing alert -->
+    <div class="box">
+        <h3>Question 2: Mobile Phone Lookup</h3>
+        <div class="mobile-container">
+            <div class="mobile-card" onclick="buyPhone('iPhone 6 Plus')">
+                <img src="./images/i phone.jpg" alt="iPhone 6">
+                <p>iPhone6Plus.gif</p>
+            </div>
+            <div class="mobile-card" onclick="buyPhone('Galaxy S6 Edge Plus')">
+                <img src="./images/samsung.jpg" alt="samsung S6">
+                <p>GalaxyS6EdgePlus.gif</p>
+            </div>
+            <div class="mobile-card" onclick="buyPhone('V10')">
+                <img src="./images/VIVO.jpg" alt="V10">
+                <p>V10.gif</p>
+            </div>
+            <div class="mobile-card" onclick="buyPhone('Huawei P8')">
+                <img src="./images/ZTE.png" alt="Huawei P8">
+                <p>HuaweiP8.gif</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUESTION 3: Delete student records row -->
+    <div class="box">
+        <h3>Question 3: Student Table (Delete Row)</h3>
+        <table id="deleteStudentTable">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>Jhone</td><td>10</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>1</td><td>Doe</td><td>9</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>2</td><td>Mark</td><td>10</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>3</td><td>James</td><td>8</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>4</td><td>Sara</td><td>10</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>5</td><td>Ali</td><td>9</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>6</td><td>Ahmed</td><td>7</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>7</td><td>Usman</td><td>8</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>8</td><td>Zainab</td><td>10</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+                <tr><td>9</td><td>Bilal</td><td>9</td><td><button onclick="deleteTableRow(this)">Delete</button></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- QUESTION 4: Image change on mouseover and mouseout -->
+    <div class="box">
+        <h3>Question 4: Image Mouseover & Mouseout</h3>
+        <img id="hoverImage" 
+             src="./images/bike.webp" 
+             onmouseover="changeImage('./images/BMW.jpg')" 
+             onmouseout="changeImage('./images/bike.webp')" 
+             width="150" alt="Hover Image">
+    </div>
+
+    <!-- QUESTION 5: Counter Increase/Decrease -->
+<div class="box">
+        <h3>Question 5: Counter</h3>
+        <h2 id="counterValue">0</h2>
+        <button class="btn" onclick="increaseCounter()">Increase</button>
+        <button class="btn" onclick="decreaseCounter()">Decrease</button>
+    </div>
+
+    <!-- ==================== CHAPTER 49 - 52 ==================== -->
+
+    <!-- QUESTION 6: Signup Form & Display Submission -->
+    <div class="box">
+        <h3>Question 6: Signup Form</h3>
+        <form id="signupForm" onsubmit="handleSignup(event)">
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <div id="formDataDisplay"></div>
+    </div>
+
+    <!-- QUESTION 7: Item Details with Read More -->
+    <div class="box">
+        <h3>Question 7: Read More / Read Less</h3>
+        <p>
+            <strong>Smartphone X:</strong> Features a high performance display with modern edge-to-edge finish.
+            <span id="moreDetails" class="hidden-details">
+                It includes 12GB RAM, 256GB Storage, a 50MP triple-camera setup, 5000mAh long battery life with super fast charging support, and latest operating system updates.
+            </span>
+        </p>
+        <button id="toggleBtn" class="btn" onclick="toggleDetails()">Read more</button>
+    </div>
+
+    <!-- QUESTION 8: Student Details Table with Edit & Delete -->
+    <div class="box">
+        <h3>Question 8: Student Details & Editing System</h3>
+        
+        <!-- Add Student Form -->
+        <form id="addStudentForm" onsubmit="addStudent(event)">
+            <input type="text" id="stdName" placeholder="Name" required>
+            <input type="text" id="stdClass" placeholder="Class" required>
+            <input type="number" id="stdAge" placeholder="Age" required>
+            <button type="submit" class="btn">Add Student</button>
+        </form>
+
+        <!-- Student Table -->
+        <table id="editableStudentTable">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic Rows will be inserted here -->
+            </tbody>
+        </table>
+
+        <!-- Hidden Edit Form -->
+        <div id="editFormContainer" class="edit-form-box">
+            <h4>Edit Student Record</h4>
+            <form onsubmit="updateStudent(event)">
+                <input type="hidden" id="editRowIndex">
+                <div class="form-group">
+                    <label for="editName">Name: </label>
+                    <input type="text" id="editName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editClass">Class: </label>
+                    <input type="text" id="editClass" required>
+                </div>
+                <div class="form-group">
+                    <label for="editAge">Age: </label>
+                    <input type="number" id="editAge" required>
+                </div>
+                <button type="submit" class="btn">Update Record</button>
+                <button type="button" class="btn" onclick="cancelEdit()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
